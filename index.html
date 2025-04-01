@@ -4,22 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Aufgabenmanager</title>
+  <title>Aufgabenmanager Pro</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
 <div class="container">
-  <h1>Aufgabenmanager</h1>
+  <header>
+    <h1><i class="fas fa-tasks"></i> Aufgabenmanager Pro</h1>
+    <div class="task-counter">0 Aufgaben</div>
+  </header>
 
-  <!-- Input and button to add tasks -->
   <div class="input-container">
-    <label for="taskInput"></label><input type="text" id="taskInput" placeholder="Neue Aufgabe">
-    <button id="addTaskBtn">Aufgabe hinzufügen</button>
+    <label for="taskInput"></label><input type="text" id="taskInput" placeholder="Neue Aufgabe eingeben...">
+    <label for="prioritySelect"></label><select id="prioritySelect">
+      <option value="low">Niedrig</option>
+      <option value="medium" selected>Mittel</option>
+      <option value="high">Hoch</option>
+    </select>
+    <label for="dueDate"></label><input type="date" id="dueDate">
+    <button id="addTaskBtn"><i class="fas fa-plus"></i> Hinzufügen</button>
   </div>
 
-  <!-- Task List -->
-  <ul id="taskList"></ul>
+  <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn" data-filter="active">Aktiv</button>
+    <button class="filter-btn" data-filter="completed">Erledigt</button>
+  </div>
+
+  <div class="task-list-container">
+    <ul id="taskList"></ul>
+  </div>
 </div>
 
 <script src="script.js"></script>
